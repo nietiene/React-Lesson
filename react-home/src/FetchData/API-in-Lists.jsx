@@ -55,7 +55,7 @@ const API = () => {
     axios.post("http://localhost:3000/user/add", formData)
     .then(() => {
         fetchUser();
-        setFormData({name:"", password:""});
+        setFormData({id:"", name:"", password:""});
     })
     .catch((err) => {
         console.error("Error In New User", err);
@@ -100,6 +100,11 @@ const API = () => {
             ))}
             {/* Add New User */}
             <h2>Add New</h2>
+            <input type="number"
+            value={formData.id}
+            onChange={(e) => setFormData({...formData, id: e.target.value})}
+            placeholder="Enter Id"/> <br />
+
             <input type="text"
             value={formData.name}
             onChange={(e) => setFormData({...formData, name: e.target.value})}
