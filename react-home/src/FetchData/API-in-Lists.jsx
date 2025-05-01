@@ -30,23 +30,38 @@ const API = () => {
     // Edit user
     const HandleEdit = (user) => {
         setUpdateUser(user.id); // differentiate user to edit tell react react which user we will shor edit form
-        setFormData({name: user.name, password: user.password});
+        setFormData({name: user.name, password: user.password}); // display existing name and passowrd of user
     }
 
     // Hndle Edit
     const HandleUpdate = () => {
         axios.put(`http://localhost:3000/user/${updateUser}`, formData)
         .then(() => {
-            fetchUser();
-            setUpdateUser(null);
-            setFormData({name:"", password:""});
+            fetchUser(); // reftesh the screen to get updated user
+            setUpdateUser(null); // exist in editing mode
+            setFormData({name:"", password:""}); // reset Input to empty
         })
        .catch((err) => {
         console.error("Error", err);
        });
     }
 
-    return (
+
+  const HandleAddNew = () => {
+    if (!formData.name || !formData.password) {
+        alert("Both name and password are required");
+        return;
+    }
+    axios.post("http://localhost:3000/user/add", formData)
+    .then(() => {
+        fetchUser();
+        setFormData({name:"", password:""});
+    })
+    .catch((err) => {
+        console.error("Error In New User", err);
+    });
+  }
+      return (
         <div>
             <h2>List Of User</h2>
             {users.map((user) => (
@@ -61,13 +76,13 @@ const API = () => {
                           </li>
                           <li>
                             <input type="text" value={formData.password} 
-                             onChange={(E) => setFormData({...formData, password: E.target.value})}
+                             onChange={(e) => setFormData({...formData, password: e.target.value})}
                              placeholder="Password"
                             />
                           </li>
                           <li>
                             <button onClick={HandleUpdate}>Save</button>
-                            <button onClick={(e) => setUpdateUser(null)}>Cancel</button>
+                            <button onClick={() => setUpdateUser(null)}>Cancel</button>
                           </li>
                         </>
                     ) : (
@@ -83,6 +98,18 @@ const API = () => {
                     )}
                 </ol>
             ))}
+            {/* Add New User */}
+            <h2>Add New</h2>
+            <input type="text"
+            value={formData.name}
+            onChange={(e) => setFormData({...formData, name: e.target.value})}
+            placeholder="Enter Name"/> <br />
+
+            <input type="password" 
+             value={formData.password}
+             onChange={(e) => setFormData({...formData, password: e.target.value})}
+             placeholder="Enter Password"/>
+          <button onClick={HandleAddNew}>Add</button>
         </div>
     )
 }
