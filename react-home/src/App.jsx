@@ -11,7 +11,8 @@
 // import App from "./BudgetTracker/App";
 // import FetchData from "./FetchData/Fetch";
 // import AxiosData from "./FetchData/FetchUsingAxios";
-import API from "./FetchData/API-in-Lists";
+// import API from "./FetchData/API-in-Lists";
+import Table from "./FetchData/API-in-Table";
 function App() {
 
   return (
@@ -29,7 +30,8 @@ function App() {
      {/* < App/> */}
      {/* <FetchData /> */}
      {/* <AxiosData /> */}
-     < API /> 
+     {/* < API />  */}
+     <Table />
    </>
   )
 }
