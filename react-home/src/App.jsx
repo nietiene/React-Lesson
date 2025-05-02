@@ -15,7 +15,8 @@
 // import Table from "./FetchData/API-in-Table";
 // import FetchWithAsync from "./Fetch-with-Async/Data";
 // import Data from "./Fetch-with-Async/DataWithId";
-import PostComponet from "./Loading & Error State/post";
+// import PostComponet from "./Loading & Error State/post";
+import Weather from "./Weather-App/Weather";
 function App() {
 
   return (
@@ -37,7 +38,8 @@ function App() {
      {/* <Table /> */}
      {/* <FetchWithAsync /> */}
      {/* < Data id={10}/> */}
-     <PostComponet/>
+     {/* <PostComponet/> */}
+    <Weather />
    </>
   )
 }
