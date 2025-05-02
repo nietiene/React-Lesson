@@ -1,3 +1,4 @@
+import React from "react";
 // import Todo from "./UseState/todo.jsx";
 // import CounterDown from "./UseState/counterDown";
 // import Auto from "./UseState/AutoSave";
@@ -17,7 +18,9 @@
 // import Data from "./Fetch-with-Async/DataWithId";
 // import PostComponet from "./Loading & Error State/post";
 // import Weather from "./Weather-App/Weather";
-import Crypto from "./Crypto-Tracker-App/Crypto";
+// import Crypto from "./Crypto-Tracker-App/Crypto";
+// import DashBoard from "./React-Router/DashBoard";
+import MainFile from "./React-Router/Mini-Blog-App/MainFile";
 function App() {
 
   return (
@@ -41,7 +44,9 @@ function App() {
      {/* < Data id={10}/> */}
      {/* <PostComponet/> */}
     {/* <Weather /> */}
-    <Crypto />
+    {/* <Crypto /> */}
+    {/* <DashBoard /> */}
+    <MainFile/>
    </>
   )
 }

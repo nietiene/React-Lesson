@@ -13,11 +13,11 @@ const Crypto = () => {
                 "https://api.coingecko.com/api/v3/coins/markets",
                 {
                  params: {
-                    vs_currency: "usd",
-                    order: "market_cap_desc",
-                    per_page:10,
-                    page:1,
-                    sparkline: false
+                    vs_currency: "usd", // Confert coint in usd
+                    order: "market_cap_desc", // Sorts the list of coins by market capitalization in descending order.
+                    per_page:10, //Limits how many coins are returned per page.
+                    page:1, // Specifies which page of results you want.
+                    sparkline: false //  faster and smaller response.
                 },}
             );
             setCoin(result.data);
@@ -43,11 +43,12 @@ const Crypto = () => {
                       <img src={coin.image} alt={coin.name} />
                       <h2>Name:{coin.name}</h2>
                       <h2>Symbol: {coin.symbol}</h2>
-                      <p>Price: ${coin.current_price.toLocaleString()}</p>
+                      {/* .tolocaleString => format numbers adds commas, decimals, or other symbols */}
+                      <p>Price: ${coin.current_price.toLocaleString()}</p> 
                       <p>
-                        Change: {""}
+                        Change: {"  "} {/* means space */}
                         <span style={{color: coin.price_change_percentage_24h >= 0 ?  'green' : 'red'}}>
-                          {coin.price_change_percentage_24h.toFixed(2)}%
+                           {coin.price_change_percentage_24h.toFixed(2)}%
                          </span>
                       </p>
                       <p>Market Cap: ${coin.market_cap.toLocaleString()}</p>
