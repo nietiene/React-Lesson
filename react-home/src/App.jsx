@@ -12,7 +12,9 @@
 // import FetchData from "./FetchData/Fetch";
 // import AxiosData from "./FetchData/FetchUsingAxios";
 // import API from "./FetchData/API-in-Lists";
-import Table from "./FetchData/API-in-Table";
+// import Table from "./FetchData/API-in-Table";
+// import FetchWithAsync from "./Fetch-with-Async/Data";
+import Data from "./Fetch-with-Async/DataWithId";
 function App() {
 
   return (
@@ -31,7 +33,9 @@ function App() {
      {/* <FetchData /> */}
      {/* <AxiosData /> */}
      {/* < API />  */}
-     <Table />
+     {/* <Table /> */}
+     {/* <FetchWithAsync /> */}
+     < Data id={10}/>
    </>
   )
 }
