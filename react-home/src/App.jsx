@@ -14,7 +14,8 @@
 // import API from "./FetchData/API-in-Lists";
 // import Table from "./FetchData/API-in-Table";
 // import FetchWithAsync from "./Fetch-with-Async/Data";
-import Data from "./Fetch-with-Async/DataWithId";
+// import Data from "./Fetch-with-Async/DataWithId";
+import PostComponet from "./Loading & Error State/post";
 function App() {
 
   return (
@@ -35,7 +36,8 @@ function App() {
      {/* < API />  */}
      {/* <Table /> */}
      {/* <FetchWithAsync /> */}
-     < Data id={10}/>
+     {/* < Data id={10}/> */}
+     <PostComponet/>
    </>
   )
 }
