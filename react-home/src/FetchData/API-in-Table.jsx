@@ -1,10 +1,12 @@
 import axios from "axios";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import AddNew from "./AddNew";
 
 const Table = () => {
   const [users, setUsers] = useState([]);
   const [editUser, setEditUser] = useState(null);
   const [formData, setFormData] = useState({name:"", password:""});
+  const [showAddNew, setShowAddNew] = useState(false);
 
 useEffect(() => {
   fetchUser();
@@ -48,6 +50,10 @@ const PerformDeleting = (id) => {
 
 return (
   <div>
+    <button onClick={() => setShowAddNew(true)}>Add New</button>
+    {showAddNew && (
+      <AddNew fetchUser={fetchUser} onClose={() => setShowAddNew(false)}/>
+    )}
      <table border={2}>
       <tr>
         <th>Name</th>
