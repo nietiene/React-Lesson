@@ -4,6 +4,7 @@ const   Weather = () => {
     const [city, setCity] = useState("");
     const [weather, setWeather] = useState(null);
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
    
     //  https://home.openweathermap.org/api_keys FOR API_KEY
 
@@ -11,14 +12,16 @@ const   Weather = () => {
         
         const GetWeather = async () => {
               try{
+
                 setError(null); // Clear Previous Error
                 setWeather(null); // Clear previous Weather Data
-
+                setLoading(true)
                 const Results = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
            
                 if(!Results.ok) {
                      const errData = await Results.json(); // This will validate our Weather App
                     throw new Error(errData.message || "Some thing Went Wrong"); // Also this
+                 
                   } else {
                     const response = await Results.json(); 
                     setWeather(response); // Store Data in state
@@ -26,9 +29,12 @@ const   Weather = () => {
                 
               } catch (err) {
                 setError(err);
+                setLoading(false);
+              } finally {
+                setLoading(false);
               }
         }
-    
+    if (loading) return <div>Loading.... </div>   
 
 
     return (

@@ -16,7 +16,8 @@
 // import FetchWithAsync from "./Fetch-with-Async/Data";
 // import Data from "./Fetch-with-Async/DataWithId";
 // import PostComponet from "./Loading & Error State/post";
-import Weather from "./Weather-App/Weather";
+// import Weather from "./Weather-App/Weather";
+import Crypto from "./Crypto-Tracker-App/Crypto";
 function App() {
 
   return (
@@ -39,7 +40,8 @@ function App() {
      {/* <FetchWithAsync /> */}
      {/* < Data id={10}/> */}
      {/* <PostComponet/> */}
-    <Weather />
+    {/* <Weather /> */}
+    <Crypto />
    </>
   )
 }
