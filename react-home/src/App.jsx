@@ -20,7 +20,10 @@ import React from "react";
 // import Weather from "./Weather-App/Weather";
 // import Crypto from "./Crypto-Tracker-App/Crypto";
 // import DashBoard from "./React-Router/DashBoard";
-import MainFile from "./React-Router/Mini-Blog-App/MainFile";
+// import MainFile from "./React-Router/Mini-Blog-App/MainFile";
+// import MainPage from "./React-Router/Dynamic-Router/MainpAGE";
+// import PageMain from "./React-Router/Nested-Route/PageMain";
+import API_App from "./Context-API/API_APP";
 function App() {
 
   return (
@@ -46,7 +49,10 @@ function App() {
     {/* <Weather /> */}
     {/* <Crypto /> */}
     {/* <DashBoard /> */}
-    <MainFile/>
+    {/* <MainFile/> */}
+    {/* <MainPage /> */}
+    {/* <PageMain/> */}
+    <API_App/>
    </>
   )
 }
