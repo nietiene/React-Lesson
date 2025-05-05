@@ -1,11 +1,11 @@
 import React,{ useState } from "react";
 import UserContext from "./useContext";
-
+import Home from "./Home";
 const API_App = () => {
-    const [user, setuser] = useState({name:"Etiene", loggedIn: true});
+    const [user, setUser] = useState({name:"Etiene", loggedIn: true});
     
     return (
-        <UserContext.Provider value={{ user, setuser }}>
+        <UserContext.Provider value={{ user, setUser }}>
            <Home />
         </UserContext.Provider>
     )

@@ -23,7 +23,9 @@ import React from "react";
 // import MainFile from "./React-Router/Mini-Blog-App/MainFile";
 // import MainPage from "./React-Router/Dynamic-Router/MainpAGE";
 // import PageMain from "./React-Router/Nested-Route/PageMain";
-import API_App from "./Context-API/API_APP";
+// import API_App from "./Context-API/API_APP";
+// import HomeApp from "./Context-API/Simple App/homeApp";
+import UserManagmentDashboard from "./User-Managment-Dashboard/user";
 function App() {
 
   return (
@@ -52,7 +54,9 @@ function App() {
     {/* <MainFile/> */}
     {/* <MainPage /> */}
     {/* <PageMain/> */}
-    <API_App/>
+    {/* <API_App/> */}
+    {/* <HomeApp /> */}
+    <UserManagmentDashboard/>
    </>
   )
 }
