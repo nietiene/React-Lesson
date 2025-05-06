@@ -25,8 +25,8 @@ import React from "react";
 // import PageMain from "./React-Router/Nested-Route/PageMain";
 // import API_App from "./Context-API/API_APP";
 // import HomeApp from "./Context-API/Simple App/homeApp";
-import UserManagmentDashboard from "./User-Managment-Dashboard/user";
-function App() {
+// import UserManagmentDashboard from "./User-Managment-Dashboard/user";
+unction App() {
 
   return (
     <>
@@ -56,7 +56,8 @@ function App() {
     {/* <PageMain/> */}
     {/* <API_App/> */}
     {/* <HomeApp /> */}
-    <UserManagmentDashboard/>
+    {/* <UserManagmentDashboard/> */}
+  
    </>
   )
 }

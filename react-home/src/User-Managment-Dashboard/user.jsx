@@ -5,9 +5,11 @@ const UserManagmentDashboard = () => {
     const [user, setUser] = useState([]);
     const [error, setError] = useState(null);
     const [formData, setFormData] = useState("");
-    const [isloading, setIsLoading] = useState(true);
-    const [updatedData, setUpdatedData] = useState("");
     const [showForm, setShowForm] = useState(false);
+    const [isloading, setIsLoading] = useState(true);
+    const [isLoggedIn, setLoggedIn] = useState(false)
+    const [updatedData, setUpdatedData] = useState("");
+    
 
         const FetchedData = async () => {
             try {
@@ -62,13 +64,31 @@ const Deleted = async (id) => {
 const AddNew = async() => {
     try {
         setIsLoading(false);
-       await axios.post(`http://localhost:3001/user`, formData);
+       await axios.post(`http://localhost:3001/user`, {
+        withCredentials: true
+        ,formData});
        setFormData({name:"", password:""});
        FetchedData();
        setShowForm(false);
     } catch (err) {
         setIsLoading(false);
         setError(err.message);
+    }
+}
+
+const handleLogin = async() => {
+    try {
+        const response = await axios.get(
+            "http://localhost:3001/login",
+            {name, password},
+            {withCredentials: true}
+        );
+        setUser(response.data.user);
+        setLoggedIn(true);
+        setError(null);
+    } catch(err) {
+        setError("Login Failed");
+        setLoggedIn(false);
     }
 }
     if (isloading) return <div>Loading.....</div>
